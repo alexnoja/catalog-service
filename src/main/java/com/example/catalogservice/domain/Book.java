@@ -26,6 +26,9 @@ public class Book {
 	@NotNull(message = "The book price must be defined.")
 	@Positive(message = "The book price must be greater than zero.")
 	private Double price;
+	
+	public Book() {
+	}
 
 	public Book(String isbn, String title, String author, Year publishingYear, Double price) {
 		super();
