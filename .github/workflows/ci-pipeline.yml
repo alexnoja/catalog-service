@@ -11,5 +11,5 @@ jobs:
         with:
           java-version: 11
       - run: |
-         chmod +x mvnw
-         ./mvnw install
+         chmod +x mvn
+         ./mvn install
