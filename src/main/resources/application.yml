@@ -8,3 +8,6 @@ server:
 
 catalogservice:
  message: Welcome to the local book catalog!
+
+spring:
+ profiles.active: test-data
