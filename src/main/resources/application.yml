@@ -24,3 +24,8 @@ spring:
     initial-interval: 1000 # Initial retry interval for backoff (ms).
     max-interval: 2000 # Maximum retry interval for backoff (ms).
     multiplier: 1.1 # Multiplier to compute the next interval.
+management:
+ endpoints:
+  web:
+   exposure:
+    include: refresh # Exposes the "/actuator/refresh" endpoint through HTTP. Send a special POST request to a running Catalog Service application instance to to trigger the reloading of the configuration data that have been changed, from a Command Prompt window running "curl -X POST http://localhost:9001/actuator/refresh" command. You have just updated the configuration of an application at runtime, without restarting it, without rebuilding the application, and ensuring the traceability of changes.
