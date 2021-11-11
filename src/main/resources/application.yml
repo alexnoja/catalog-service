@@ -11,3 +11,6 @@ catalogservice:
 
 spring:
  profiles.active: test-data
+ application:
+  name: catalog-service # The name of the application, used by the config server to filter the configuration.
+ config.import: optional:configserver:http://localhost:8888 # The URL of the configuration server, used only when it’s available. !!! When the integration with the config server is not optional, the application fails to start up if it cannot contact a config server.
