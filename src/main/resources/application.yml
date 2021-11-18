@@ -24,6 +24,14 @@ spring:
     initial-interval: 1000 # Initial retry interval for backoff (ms).
     max-interval: 2000 # Maximum retry interval for backoff (ms).
     multiplier: 1.1 # Multiplier to compute the next interval.
+ datasource:
+  username: admin # A user with privileges to access the given database.
+  password: admin # The password for the given user.
+  url: jdbc:postgresql://localhost:5432/db-catalog #The JDBC URL to identify with which database you want to establish a connection.
+  hikari:
+   connection-timeout: 5000 # The maximum time (ms) waiting for getting a connection from the pool.
+   maximum-pool-size: 20 # The maximum number of connections HikariCP will keep in the pool.
+   pool-name: db-catalog-pool # The name of the connection pool.
 management:
  endpoints:
   web:
