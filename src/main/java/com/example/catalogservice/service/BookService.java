@@ -1,6 +1,5 @@
 package com.example.catalogservice.service;
 
-import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class BookService {
 		this.bookRepository = bookRepository;
 	}
 
-	public Collection<Book> viewBookList() {
+	public Iterable<Book> viewBookList() {
 		return bookRepository.findAll();
 	}
 	
@@ -40,18 +39,5 @@ public class BookService {
 			throw new BookNotFoundException(isbn);
 		}
 		bookRepository.deleteByIsbn(isbn);
-	}
-	
-	public Book editBookDetails(String isbn, Book book) {
-		Optional<Book> existingBook = bookRepository.findByIsbn(isbn);
-		if (existingBook.isEmpty()) {
-			return addBookToCatalog(book);
-		}
-		Book bookToUpdate = existingBook.get();
-		bookToUpdate.setTitle(book.getTitle());
-		bookToUpdate.setAuthor(book.getAuthor());
-		bookToUpdate.setPublishingYear(book.getPublishingYear());
-		bookToUpdate.setPrice(book.getPrice());
-		return bookRepository.update(isbn, bookToUpdate);
 	}
 }

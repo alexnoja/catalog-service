@@ -52,11 +52,6 @@ public class BookController {
 		bookService.removeBookFromCatalog(isbn);
 	}
 	
-	@PutMapping("{isbn}")
-	public Book put(@PathVariable String isbn,@Valid @RequestBody Book book) {
-		return bookService.editBookDetails(isbn, book);
-	}
-	
 	@Bean
 	public RestTemplate restTemplate() {
 	    return new RestTemplate();
