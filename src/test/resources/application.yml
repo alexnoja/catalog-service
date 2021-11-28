@@ -1,0 +1,8 @@
+spring:
+ datasource:
+  url: jdbc:tc:postgresql:14:/// # Identifies the PostgreSQL module in Testcontainers. "14" is the version of PostgreSQL to use.
+ jpa:
+  hibernate:
+   ddl-auto: create-drop # Instructs Hibernate to generate the DDL for you.
+ profiles: 
+  active: default # Enables default profile when running tests.
