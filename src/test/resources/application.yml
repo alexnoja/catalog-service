@@ -6,3 +6,5 @@ spring:
    ddl-auto: create-drop # Instructs Hibernate to generate the DDL for you.
  profiles: 
   active: default # Enables default profile when running tests.
+ config:
+  import: configserver:http://configserver.example.com?fail-fast=true&max-attempts=10&max-interval=1500&multiplier=1.2&initial-interval=1100
