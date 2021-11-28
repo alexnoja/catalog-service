@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.catalogservice.domain.Book;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = {"spring.cloud.config.enabled=false"})
 public class BookControllerIntegrationTests {
 
 	private static final String URL = "http://localhost:9001/books";
