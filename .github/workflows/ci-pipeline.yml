@@ -39,4 +39,7 @@ jobs:
       chmod +x mvnw
       ./mvnw package
    - name: Push to Docker Hub
-     run: docker push nojaa/catalog-service:0.0.1-SNAPSHOT
+     with:
+      context: ./
+      file: ./Dockerfile
+      run: docker push nojaa/catalog-service:0.0.1-SNAPSHOT
