@@ -38,9 +38,10 @@ jobs:
      run: |
       chmod +x mvnw
       ./mvnw package
-   - name: Push to Docker Hub
+   
+   - name: Build and push
+     uses: docker/build-push-action@v2
      with:
-      context: ./
-      file: ./Dockerfile
-      tags: ${{ secrets.DOCKER_USERNAME }}/catalog-service:0.0.1-SNAPSHOT
-   - run: docker push ${{ secrets.DOCKER_USERNAME }}/catalog-service:0.0.1-SNAPSHOT
+       context: .
+       push: true
+       tags: user/app:latest
