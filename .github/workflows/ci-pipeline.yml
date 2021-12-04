@@ -42,4 +42,6 @@ jobs:
      with:
       context: ./
       file: ./Dockerfile
-      run: docker push nojaa/catalog-service:0.0.1-SNAPSHOT
+      push: true
+      tags: ${{ secrets.DOCKER_USERNAME }}/catalog-service:0.0.1-SNAPSHOT
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/catalog-service:0.0.1-SNAPSHOT
