@@ -25,8 +25,8 @@ spring:
     max-interval: 2000 # Maximum retry interval for backoff (ms).
     multiplier: 1.1 # Multiplier to compute the next interval.
  datasource:
-  username: postgres # A user with privileges to access the given database.
-  password: practicerwd # The password for the given user.
+  username: admin # A user with privileges to access the given database.
+  password: admin # The password for the given user.
   url: jdbc:postgresql://bookshop-catalog-postgresql:5432/db_catalog #The JDBC URL to identify with which database you want to establish a connection.
   hikari:
    connection-timeout: 5000 # The maximum time (ms) waiting for getting a connection from the pool.
