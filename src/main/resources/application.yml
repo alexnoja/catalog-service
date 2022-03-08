@@ -14,28 +14,28 @@ spring:
  application:
   name: catalog-service # The name of the application, used by the config server to filter the configuration.
  config.import: optional:configserver:http://localhost:8888 # The URL of the configuration server, used only when it’s available. !!! When the integration with the config server is not optional, the application fails to start up if it cannot contact a config server.
- cloud:
-  config:
-   request-connect-timeout: 1000 # Timeout on waiting to connect to the config server (ms).
-   request-read-timeout: 5000 # Timeout on waiting to read configuration data from the config server (ms).
-   fail-fast: true # Makes a failure to connect to the config server fatal.
-   retry: # The retry behavior is enabled only when the spring.cloud.config.fail-fast property is set to true .
-    max-attempts: 6 # Maximum number of attempts.
-    initial-interval: 1000 # Initial retry interval for backoff (ms).
-    max-interval: 2000 # Maximum retry interval for backoff (ms).
-    multiplier: 1.1 # Multiplier to compute the next interval.
+ #cloud:
+  #config:
+  # request-connect-timeout: 1000 # Timeout on waiting to connect to the config server (ms).
+  # request-read-timeout: 5000 # Timeout on waiting to read configuration data from the config server (ms).
+  # fail-fast: true # Makes a failure to connect to the config server fatal.
+  # retry: # The retry behavior is enabled only when the spring.cloud.config.fail-fast property is set to true .
+  #  max-attempts: 6 # Maximum number of attempts.
+  #  initial-interval: 1000 # Initial retry interval for backoff (ms).
+  #  max-interval: 2000 # Maximum retry interval for backoff (ms).
+  #  multiplier: 1.1 # Multiplier to compute the next interval.
  datasource:
   username: admin # A user with privileges to access the given database.
-  password: VRZDjsyGBB # The password for the given user.
-  url: jdbc:postgresql://bookshop-catalog-postgresql:5432/db_catalog #The JDBC URL to identify with which database you want to establish a connection.
+  password: admin # The password for the given user.
+  url: jdbc:postgresql://localhost:5432/db_catalog #The JDBC URL to identify with which database you want to establish a connection.
   hikari:
    connection-timeout: 5000 # The maximum time (ms) waiting for getting a connection from the pool.
    maximum-pool-size: 20 # The maximum number of connections HikariCP will keep in the pool.
    pool-name: db-catalog-pool # The name of the connection pool.
  jpa:
   hibernate.ddl-auto: create-drop # Instructs Hibernate to create tables at startup and remove them at shutdown automatically.
-management:
- endpoints:
-  web:
-   exposure:
-    include: refresh # Exposes the "/actuator/refresh" endpoint through HTTP. Send a special POST request to a running Catalog Service application instance to to trigger the reloading of the configuration data that have been changed, from a Command Prompt window running "curl -X POST http://localhost:9001/actuator/refresh" command. You have just updated the configuration of an application at runtime, without restarting it, without rebuilding the application, and ensuring the traceability of changes.
+#management:
+# endpoints:
+#  web:
+#   exposure:
+#    include: refresh # Exposes the "/actuator/refresh" endpoint through HTTP. Send a special POST request to a running Catalog Service application instance to to trigger the reloading of the configuration data that have been changed, from a Command Prompt window running "curl -X POST http://localhost:9001/actuator/refresh" command. You have just updated the configuration of an application at runtime, without restarting it, without rebuilding the application, and ensuring the traceability of changes.
