@@ -25,6 +25,7 @@ spring:
   #  max-interval: 2000 # Maximum retry interval for backoff (ms).
   #  multiplier: 1.1 # Multiplier to compute the next interval.
  datasource:
+  driverClassName: com.mysql.cj.jdbc.Driver
   username: admin # A user with privileges to access the given database.
   password: admin # The password for the given user.
   url: jdbc:postgresql://localhost:5432/db_catalog #The JDBC URL to identify with which database you want to establish a connection.
