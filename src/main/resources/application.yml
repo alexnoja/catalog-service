@@ -29,10 +29,10 @@ spring:
   username: admin # A user with privileges to access the given database.
   password: admin # The password for the given user.
   url: jdbc:postgresql://localhost:5432/db_catalog #The JDBC URL to identify with which database you want to establish a connection.
-  hikari:
-   connection-timeout: 5000 # The maximum time (ms) waiting for getting a connection from the pool.
-   maximum-pool-size: 20 # The maximum number of connections HikariCP will keep in the pool.
-   pool-name: db-catalog-pool # The name of the connection pool.
+#  hikari:
+#   connection-timeout: 5000 # The maximum time (ms) waiting for getting a connection from the pool.
+#   maximum-pool-size: 20 # The maximum number of connections HikariCP will keep in the pool.
+#   pool-name: db-catalog-pool # The name of the connection pool.
 # jpa:
 #  hibernate.ddl-auto: create-drop # Instructs Hibernate to create tables at startup and remove them at shutdown automatically.
 #management:
