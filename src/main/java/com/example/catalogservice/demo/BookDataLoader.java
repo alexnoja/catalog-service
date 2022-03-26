@@ -20,7 +20,7 @@ public class BookDataLoader {
 		this.bookRepository = bookRepository;
 	}
 
-	@EventListener(ApplicationReadyEvent.class)// The test data generation is triggered when an ApplicationReadyEvent is sent, that is when the application startup phase is completed 
+	//@EventListener(ApplicationReadyEvent.class)// The test data generation is triggered when an ApplicationReadyEvent is sent, that is when the application startup phase is completed 
 	public void loadBookTestData() {
 		Book book1 = new Book("9780132350884", "Clean Code", "Robert Martin", Year.of(2008), 33.33);
 		Book book2 = new Book("0134494164", "Clean Architecture", "Robert Martin", Year.of(2017), 32.00);
